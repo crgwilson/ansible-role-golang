@@ -4,9 +4,8 @@ on:
   push: ~
   pull_request: ~
   schedule:
-    - cron: '42 13 * * *'
+    - cron: '47 13 * * *'
 
-  [push, pull_request, schedule]
 jobs:
   build:
     runs-on: ubuntu-latest
