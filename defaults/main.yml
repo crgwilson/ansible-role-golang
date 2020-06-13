@@ -1,0 +1,12 @@
+---
+golang_install_dir: /usr/local
+golang_install_bin_dir: /usr/local/bin
+golang_tmp_dir: /tmp
+
+golang_version: 1.14.4
+golang_architecture: amd64
+
+golang_archive: "go{{ golang_version }}.linux-{{ golang_architecture }}.tar.gz"
+golang_archive_checksum_algorithm: sha256
+
+golang_archive_url: "https://dl.google.com/go/{{ golang_archive }}"

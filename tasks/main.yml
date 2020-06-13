@@ -1,0 +1,24 @@
+---
+- name: Get OS specific vars
+  include_vars: "{{ golang_version }}.yml"
+
+- name: Download Golang archive
+  get_url:
+    url: "{{ golang_archive_url }}"
+    dest: "{{ golang_tmp_dir }}"
+    checksum: "{{ golang_archive_checksum_algorithm }}:{{ golang_archive_checksum }}"
+
+- name: Unpack Golang archive
+  unarchive:
+    src: "{{ golang_tmp_dir }}/{{ golang_archive }}"
+    dest: "{{ golang_install_dir }}"
+    remote_src: true
+
+- name: Link go binaries to bin dir
+  file:
+    src: "{{ golang_install_dir }}/go/bin/{{ item }}"
+    dest: "{{ golang_install_bin_dir }}/{{ item }}"
+    state: link
+  loop:
+    - go
+    - gofmt

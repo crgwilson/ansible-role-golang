@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  vars:
+    golang_version: 1.13.12
+
+  roles:
+    - role: ansible-role-golang
