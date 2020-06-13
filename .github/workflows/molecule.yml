@@ -4,7 +4,7 @@ on:
   push: ~
   pull_request: ~
   schedule:
-    - cron: '47 13 * * *'
+    - cron: '55 13 * * *'
 
 jobs:
   build:
